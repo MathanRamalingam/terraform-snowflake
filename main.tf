@@ -26,7 +26,7 @@ resource "snowflake_resource_monitor" "transform_monitor" {
   name            = "TRANSFORM_MONITOR"
   credit_quota    = 10
   frequency       = "MONTHLY"
-  start_timestamp = "2026-06-01 00:00"
+  start_timestamp = "2026-07-01 00:00"
 
   notify_triggers = [50, 80]
   suspend_trigger = 100
