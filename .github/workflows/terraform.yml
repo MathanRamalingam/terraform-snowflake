@@ -1,0 +1,39 @@
+name: Terraform — Snowflake Infrastructure
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    env:
+      TF_VAR_snowflake_account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      TF_VAR_snowflake_username: ${{ secrets.SNOWFLAKE_USER }}
+      TF_VAR_snowflake_password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
+        if: github.event_name == 'pull_request'
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
