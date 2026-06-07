@@ -23,12 +23,13 @@ resource "snowflake_warehouse" "transform_wh" {
 }
 
 resource "snowflake_resource_monitor" "transform_monitor" {
-  name         = "TRANSFORM_MONITOR"
-  credit_quota = 10
-  frequency    = "MONTHLY"
+  name            = "TRANSFORM_MONITOR"
+  credit_quota    = 10
+  frequency       = "MONTHLY"
+  start_timestamp = "2026-06-01 00:00"
 
-  notify_triggers  = [50, 80]
-  suspend_trigger  = 100
+  notify_triggers = [50, 80]
+  suspend_trigger = 100
 }
 
 resource "snowflake_account_role" "analyst_role" {
