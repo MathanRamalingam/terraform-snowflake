@@ -1,3 +1,4 @@
+# Snowflake infrastructure managed by Terraform
 terraform {
   cloud {
     organization = "MathanRamalingam"
