@@ -47,4 +47,9 @@ resource "snowflake_account_role" "analyst_role" {
 
 resource "snowflake_grant_privileges_to_account_role" "analyst_warehouse" {
   privileges        = ["USAGE"]
-  account_role_name = snowflake_account_
+  account_role_name = snowflake_account_role.analyst_role.name
+  on_account_object {
+    object_type = "WAREHOUSE"
+    object_name = snowflake_warehouse.transform_wh.name
+  }
+}
