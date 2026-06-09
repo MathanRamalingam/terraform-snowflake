@@ -13,3 +13,14 @@ variable "snowflake_password" {
   sensitive   = true
   description = "Snowflake password"
 }
+
+variable "asko_admin_password" {
+  description = "Admin password for ASKO Reader Account"
+  type        = string
+  sensitive   = true
+}
+
+variable "asko_analyst_password" {
+  type      = string
+  sensitive = true
+}
