@@ -1,31 +1,26 @@
-variable "snowflake_account" {
-  type        = string
-  description = "Snowflake account identifier"
+variable "snowflake_organization" {
+  type      = string
 }
 
-variable "snowflake_username" {
-  type        = string
-  description = "Snowflake username"
+variable "snowflake_account" {
+  type      = string
+}
+
+variable "snowflake_user" {
+  type      = string
 }
 
 variable "snowflake_password" {
-  type        = string
-  sensitive   = true
-  description = "Snowflake password"
+  type      = string
+  sensitive = true
 }
 
 variable "asko_admin_password" {
-  description = "Admin password for ASKO Reader Account"
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "asko_analyst_password" {
   type      = string
   sensitive = true
-}
-
-variable "snowflake_organization" {
-  description = "Snowflake organization name"
-  type        = string
 }
