@@ -5,7 +5,6 @@ terraform {
       name = "snowflake-infrastructure"
     }
   }
-
   required_providers {
     snowflake = {
       source  = "snowflakedb/snowflake"
