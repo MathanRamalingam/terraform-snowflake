@@ -8,17 +8,18 @@ terraform {
 
   required_providers {
     snowflake = {
-      source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.89"
+      source  = "snowflakedb/snowflake"
+      version = "~> 1.0"
     }
   }
 }
 
 provider "snowflake" {
-  account  = var.snowflake_account
-  username = var.snowflake_username
-  password = var.snowflake_password
-  role     = "ACCOUNTADMIN"
+  organization_name = var.snowflake_organization
+  account_name      = var.snowflake_account
+  user              = var.snowflake_username
+  password          = var.snowflake_password
+  role              = "ACCOUNTADMIN"
 }
 
 resource "snowflake_warehouse" "transform_wh" {
