@@ -3,5 +3,5 @@ resource "snowflake_managed_account" "reader" {
     admin_name = var.admin_name
     admin_password = var.admin_password
     type = "READER"
-    comment = "var.comment"
+    comment = var.comment
 }
