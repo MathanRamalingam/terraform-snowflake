@@ -12,6 +12,7 @@ jobs:
 
     env:
       TF_VAR_snowflake_account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      TF_VAR_snowflake_organization: ${{ secrets.SNOWFLAKE_ORGANIZATION }}
       TF_VAR_snowflake_username: ${{ secrets.SNOWFLAKE_USER }}
       TF_VAR_snowflake_password: ${{ secrets.SNOWFLAKE_PASSWORD }}
       TF_VAR_asko_admin_password: ${{ secrets.ASKO_ADMIN_PASSWORD }}
