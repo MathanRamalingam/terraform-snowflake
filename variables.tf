@@ -24,3 +24,8 @@ variable "asko_analyst_password" {
   type      = string
   sensitive = true
 }
+
+variable "snowflake_organization" {
+  description = "Snowflake organization name"
+  type        = string
+}
